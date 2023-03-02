@@ -27,7 +27,7 @@ for (let i in obj){
         obj["get" + i] = function(){
             return this[i];
         }
-        obj["set" + i] = function(){
+        obj["set" + i] = function(value){
             this[i] = value;
         }
     };
@@ -40,5 +40,6 @@ return obj
 
 
 console.log(getsetGen(rectangle))
+rectangle.setwidth(20)
 console.log(rectangle.getwidth())
 
